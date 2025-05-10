@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  :root {
+    --primary-color: #fff180;
+    --second-color: #ffffff;
+    --black-color: #000000;
+  }
+  
+  body {
+    background-color: rgb(236, 161, 161);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .form_box {
+    position: relative;
+  width: 450px;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px); /* cho Safari */
+  background-color: rgba(255, 255, 255, 0.05); /* 💥 thêm dòng này */
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 7.5em 2.5em 4em 2.5em;
+  color: var(--second-color);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 200px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .header span {
+    font-size: 16px;
+    color: var(--black-color);
+  }
+ 
+  .input_box {
+    margin-bottom: 20px;
+  }
+  
+  .input_box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: var(--second-color);
+  }
+  
+  .input_box input,
+  .input_box textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--second-color);
+  }
+  
+  .input_box textarea {
+    height: 80px;
+  }
+  
+  button {
+    background-color: #d60000;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #b50000;
+  }
+  .product-content {
+    margin-top: 90px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--second-color);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: var(--primary-color);
+    color: var(--black-color);
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+  
+  img {
+    max-width: 50px;
+    border-radius: 6px;
+  }
+  
+  .table-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 999;
+    padding: 40px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .table-fullscreen table {
+    width: 90%;
+    background-color: white;
+    color: black;
+    border: 2px solid #333;
+    border-radius: 10px;
+  }
+  
+  .table-fullscreen th {
+    background-color: #f0c000;
+    color: #000;
+  }
+  
+  .close-fullscreen {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  
+
+  
