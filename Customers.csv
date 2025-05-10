@@ -1,0 +1,11 @@
+CustomerID;FirstName;LastName;Email;Phone;Address
+1;Xuan  ;Vinh;Xuanvinh@gmail.com;999223268;So 12 Phan Dinh Phung, Ba Dinh, Ha Noi  
+2;Nguyen  ;Lan;Nguyenlan@gmail.com;999671856;So 8 Nguyen Thai Hoc, Dong Da, Ha Noi  
+3;Bui  ;Quynh;Buiquynh@gmail.com;999100930;So 45 Giai Phong, Hai Ba Trung, Ha Noi  
+4;Nguyen  ;Anh;Nguyenanh@gmail.com;999122581;So 21 Cau Giay, Cau Giay, Ha Noi  
+5;Nguyen  ;Thao;Nguyenthao@gmail.com;999901532;So 88 Tran Duy Hung, Cau Giay, Ha Noi  
+6;Do  ;Hau;Dohau@gmail.com;999456123;So 30 De La Thanh, Ba Dinh, Ha Noi  
+7;Truong  ;An;Truongan@gmail.com;999876543;So 11 Xa Dan, Dong Da, Ha Noi  
+8;Do  ;Duong;Doduong@gmail.com;999012987;So 3 Lang Ha, Ba Dinh, Ha Noi  
+9;Nguyen  ;Duy;Nguyenduy@gmail.com;999567890;So 65 Kim Ma, Ba Dinh, Ha Noi  
+10;Vu;Ly;Vuly@gmail.com;999004567;So 28 Truong Dinh, Hai Ba Trung, Ha Noi  
