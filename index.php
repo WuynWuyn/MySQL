@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 
+// Truy vấn danh sách sản phẩm, hiển thị thông tin chính xác về giá nhập, giá bán, lãi suất, tồn kho
 $query = "
 SELECT 
     p.ProductID,
@@ -8,8 +9,8 @@ SELECT
     c.CategoryName,
     p.Expiry,
     p.SellPrice,
-    ROUND(p.SellPrice * 0.4, 2) AS ImportPrice,
-    ROUND(p.SellPrice - (p.SellPrice * 0.4), 2) AS ProfitPerUnit,
+    ps.ImportPricePerUnit,
+    ROUND(p.SellPrice - ps.ImportPricePerUnit, 2) AS ProfitPerUnit,
     s.SupplierName,
     ps.StockQuantity
 FROM Products p
@@ -20,16 +21,17 @@ LEFT JOIN Suppliers s ON ps.SuppliersSupplierID = s.SupplierID
 
 $result = $conn->query($query);
 ?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
   <title>Danh sách sản phẩm</title>
   <style>
-    body { font-family: sans-serif; }
+    body { font-family: sans-serif; margin: 20px; }
     .btn {
       display: inline-block;
-      margin: 10px 0;
+      margin: 10px 10px 20px 0;
       padding: 6px 10px;
       background: #28a745;
       color: white;
@@ -64,7 +66,9 @@ $result = $conn->query($query);
   <h2>📦 Danh sách sản phẩm</h2>
   <a href="add_product.php" class="btn">➕ Thêm sản phẩm</a>
   <a href="report.php" class="btn">📊 Hiển thị khách hàng</a>
+
   <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm sản phẩm...">
+
   <table>
     <thead>
       <tr>
@@ -74,7 +78,7 @@ $result = $conn->query($query);
         <th>HSD</th>
         <th>Giá bán</th>
         <th>Giá nhập</th>
-        <th>Lãi suất</th>
+        <th>Lợi nhuận</th>
         <th>Nhà cung cấp</th>
         <th>Tồn kho</th>
         <th>Hành động</th>
@@ -87,9 +91,9 @@ $result = $conn->query($query);
           <td><?= htmlspecialchars($row['ProductName']) ?></td>
           <td><?= htmlspecialchars($row['CategoryName']) ?></td>
           <td><?= ($row['Expiry'] === '0000-00-00' || !$row['Expiry']) ? 'Không có' : $row['Expiry'] ?></td>
-          <td><?= number_format($row['SellPrice'], 0) ?> VND</td>
-          <td><?= number_format($row['ImportPrice'], 0) ?> VND</td>
-          <td><?= number_format($row['ProfitPerUnit'], 0) ?> VND</td>
+          <td><?= number_format($row['SellPrice'] ?? 0, 0) ?> VND</td>
+          <td><?= number_format($row['ImportPricePerUnit'] ?? 0, 0) ?> VND</td>
+          <td><?= number_format($row['ProfitPerUnit'] ?? 0, 0) ?> VND</td>
           <td><?= $row['SupplierName'] ?? "Chưa có" ?></td>
           <td><?= $row['StockQuantity'] ?? 0 ?></td>
           <td>
